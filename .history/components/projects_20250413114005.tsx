@@ -74,7 +74,7 @@ export default function Projects() {
       category: 'fullstack',
       github: {
         fe: 'https://github.com/NoobCoderY/MeetHive_fe',
-        be: 'https://github.com/NoobCoderY/MeetHive_be',
+        be: '#',
       },
       demo: 'https://justagile-ui.vercel.app/',
     },
