@@ -33,7 +33,7 @@ export default function Hero() {
             <span className='relative'>Full Stack Developer</span>
           </h2>
           <p className='text-lg text-gray-400 mb-8 max-w-xl'>
-            Specialized in building robust web applications with React, Node.js,
+            Specialized in building robust web applications with React, Node.js, Django
             and AWS. Passionate about creating efficient, scalable, and
             user-friendly solutions.
           </p>
