@@ -41,7 +41,7 @@ export default function Experience() {
       ],
     },
     {
-      company: "Amar Designer",
+      company: "LueurTech Software Solutions Pvt.Ltd",
       position: "MERN Stack Intern",
       period: "Feb 2023 – May 2023",
       description: [
