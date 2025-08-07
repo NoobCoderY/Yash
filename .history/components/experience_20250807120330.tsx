@@ -20,6 +20,7 @@ export default function Experience() {
         "Designed and delivered a full-stack transcription and summarization platform using React, Django, and AWS.",
         "Increased transcription efficiency by 40% through advanced integrations with AWS S3 and AWS Transcribe.",
         "Enhanced platform scalability by 30%, collaborating with cross-functional teams on performance optimization.",
+        "Developed a comprehensive video service with MP4 to HLS conversion, multi-resolution streaming, and adaptive bitrate support.",
       ],
     },
     {
@@ -78,7 +79,7 @@ export default function Experience() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
+              className="relative flex items-center justify-between md:justify-normal md:even:flex-row-reverse group"
             >
               <div className="flex items-center justify-center w-10 h-10 rounded-full border border-gray-700 bg-gray-900 text-primary shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                 <Calendar size={20} />

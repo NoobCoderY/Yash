@@ -49,7 +49,7 @@ export default function Skills() {
     {
       title: 'Cloud & DevOps',
       icon: <Layers className='h-8 w-8 text-primary' />,
-      skills: ['AWS', 'S3', 'AWS Transcribe'],
+      skills: ['AWS', 'S3', 'AWS Transcribe', 'Docker', 'CI/CD'],
     },
     {
       title: 'Tools & Others',

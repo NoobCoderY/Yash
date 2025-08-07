@@ -12,36 +12,51 @@ export default function Skills() {
 
   const skillCategories = [
     {
-      title: "Programming Languages",
-      icon: <Code2 className="h-8 w-8 text-primary" />,
-      skills: ["C++", "JavaScript", "TypeScript", "C", "SQL"],
+      title: 'Programming Languages',
+      icon: <Code2 className='h-8 w-8 text-primary' />,
+      skills: [
+        'C++',
+        'JavaScript',
+        'TypeScript',
+        'C',
+        'SQL',
+        'Data Structures',
+        'Algorithms',
+      ],
     },
     {
-      title: "Frontend",
-      icon: <Globe className="h-8 w-8 text-primary" />,
-      skills: ["React.js", "Next.js", "Redux", "Tailwind CSS", "SASS", "Angular"],
+      title: 'Frontend',
+      icon: <Globe className='h-8 w-8 text-primary' />,
+      skills: [
+        'React.js',
+        'Next.js',
+        'Redux',
+        'Tailwind CSS',
+        'SASS',
+        'Angular',
+      ],
     },
     {
-      title: "Backend",
-      icon: <Server className="h-8 w-8 text-primary" />,
-      skills: ["Node.js", "Express.js", "Django", "GraphQL"],
+      title: 'Backend',
+      icon: <Server className='h-8 w-8 text-primary' />,
+      skills: ['Node.js', 'Express.js', 'Django', 'GraphQL'],
     },
     {
-      title: "Databases",
-      icon: <Database className="h-8 w-8 text-primary" />,
-      skills: ["MongoDB", "PostgreSQL", "Supabase"],
+      title: 'Databases',
+      icon: <Database className='h-8 w-8 text-primary' />,
+      skills: ['MongoDB', 'PostgreSQL', 'Supabase'],
     },
     {
-      title: "Cloud & DevOps",
-      icon: <Layers className="h-8 w-8 text-primary" />,
-      skills: ["AWS", "S3", "AWS Transcribe"],
+      title: 'Cloud & DevOps',
+      icon: <Layers className='h-8 w-8 text-primary' />,
+      skills: ['AWS', 'S3', 'AWS Transcribe', 'Docker', ' GithCI/CD'],
     },
     {
-      title: "Tools & Others",
-      icon: <PenTool className="h-8 w-8 text-primary" />,
-      skills: ["Data Structures", "Algorithms", "Git", "Prisma ORM", "WebSocket"],
+      title: 'Tools & Others',
+      icon: <PenTool className='h-8 w-8 text-primary' />,
+      skills: ['Git', 'Prisma ORM', 'WebSocket'],
     },
-  ]
+  ];
 
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
