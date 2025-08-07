@@ -18,7 +18,7 @@ export default function Skills() {
         'C++',
         'JavaScript',
         'TypeScript',
-        'C',
+        'Python',
         'SQL',
         'Data Structures',
         'Algorithms',
