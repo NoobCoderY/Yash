@@ -112,7 +112,6 @@ export default function Projects() {
       },
       demo: 'https://justagile-ui.vercel.app/',
     },
-
     {
       title: 'Twaddle',
       description:
@@ -323,7 +322,6 @@ export default function Projects() {
                   className='min-w-[280px] max-w-[280px] snap-start'
                 >
                   <Card className='h-[320px] bg-gradient-to-br from-gray-900/90 to-gray-800/80 border-gray-800 hover:border-primary/40 transition-all duration-300 overflow-hidden group relative'>
-                    
 
                     <div className='relative h-32 overflow-hidden'>
                       <img
@@ -467,3 +465,5 @@ export default function Projects() {
         </Tabs>
       </div>
     </section>
+  );
+}
