@@ -30,6 +30,40 @@ export default function Projects() {
 
   const projects = [
     {
+      title: 'AI Interview Pro',
+      description:
+        'An AI-powered mock interview platform with voice-based answers, real-time scoring, resume parsing, and detailed PDF performance reports.',
+      image:
+        'https://img.freepik.com/free-vector/job-interview-conversation_74855-7566.jpg',
+      tags: [
+        'React.js',
+        'Node.js',
+        'Express.js',
+        'AI/GPT',
+        'Voice API',
+        'Razorpay',
+        'PDF Generation',
+        'Resume Parsing',
+        'Tailwind CSS',
+        'MongoDB',
+      ],
+      category: 'fullstack',
+      github: {
+        fe: '#',
+        be: '#',
+      },
+      demo: '#',
+      highlights: [
+        'AI-generated questions tailored to target role, experience level, and interview mode (Technical / HR)',
+        'Resume parsing — upload PDF and AI generates questions based on actual projects and skills',
+        'Voice-based answers — speak responses naturally during the interview',
+        'Real-time AI scoring on communication, technical correctness, and confidence',
+        'Detailed PDF report — full breakdown of performance after each session',
+        'Interview history — track progress and scores across all past sessions',
+        'Credits system — start free with 100 credits, buy more via Razorpay',
+      ],
+    },
+    {
       title: 'Drivo',
       description:
         'A ride-hailing platform with real-time ride tracking, flexible pricing, and geolocation services using WebSocket and Google Maps API.',
@@ -355,7 +389,7 @@ export default function Projects() {
 
                       <div className='flex justify-between mt-auto'>
                         <div className='flex gap-1'>
-                          {project.github.fe && (
+                          {project.github.fe && project.github.fe !== '#' && (
                             <Link
                               href={project.github.fe}
                               target='_blank'
@@ -372,7 +406,7 @@ export default function Projects() {
                               </Button>
                             </Link>
                           )}
-                          {project.github.be && (
+                          {project.github.be && project.github.be !== '#' && (
                             <Link
                               href={project.github.be}
                               target='_blank'
@@ -390,19 +424,21 @@ export default function Projects() {
                             </Link>
                           )}
                         </div>
-                        <Link
-                          href={project.demo}
-                          target='_blank'
-                          rel='noopener noreferrer'
-                        >
-                          <Button
-                            size='sm'
-                            className='h-8 px-2.5 bg-primary/90 hover:bg-primary'
+                        {project.demo && project.demo !== '#' && (
+                          <Link
+                            href={project.demo}
+                            target='_blank'
+                            rel='noopener noreferrer'
                           >
-                            <ExternalLink className='h-3.5 w-3.5 mr-1' />
-                            Demo
-                          </Button>
-                        </Link>
+                            <Button
+                              size='sm'
+                              className='h-8 px-2.5 bg-primary/90 hover:bg-primary'
+                            >
+                              <ExternalLink className='h-3.5 w-3.5 mr-1' />
+                              Demo
+                            </Button>
+                          </Link>
+                        )}
                       </div>
                     </CardContent>
 
