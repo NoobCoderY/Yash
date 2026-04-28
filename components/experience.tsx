@@ -13,9 +13,19 @@ export default function Experience() {
 
   const experiences = [
     {
+      company: 'Maxlence Consulting',
+      position: 'Software Engineer',
+      period: 'Sep 2025 – Present',
+      description: [
+        'Built a multi-tenant SaaS with Dockerized microservices behind Nginx, connected to a central User service, using React, Tailwind CSS, Node.js, Express.js.',
+        'Integrated MySQL + Redis for reliable storage and fast caching.',
+        'Used Python to integrate AI services via APIs for insights.',
+      ],
+    },
+    {
       company: 'BaryTech Pvt. Ltd',
       position: 'Full Stack Developer',
-      period: 'Feb 2024 – Present',
+      period: 'Feb 2024 – Sep 2025',
       description: [
         'Designed and delivered a full-stack transcription and summarization platform using React, Django, and AWS.',
         'Increased transcription efficiency by 40% through advanced integrations with AWS S3 and AWS Transcribe.',
@@ -76,7 +86,7 @@ export default function Experience() {
           </p>
         </motion.div>
 
-        <div className='space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-700 before:to-transparent'>
+        <div className='space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary/50 before:to-transparent'>
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
@@ -85,7 +95,7 @@ export default function Experience() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className='relative flex items-center justify-between md:justify-normal md:even:flex-row-reverse group'
             >
-              <div className='flex items-center justify-center w-10 h-10 rounded-full border border-gray-700 bg-gray-900 text-primary shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10'>
+              <div className='flex items-center justify-center w-10 h-10 rounded-full border border-gray-700 bg-gray-900 text-primary shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2'>
                 <Calendar size={20} />
               </div>
 
