@@ -49,10 +49,10 @@ export default function Projects() {
       ],
       category: 'fullstack',
       github: {
-        fe: '#',
-        be: '#',
+        fe: 'https://github.com/NoobCoderY/interview-ai-fe',
+        be: 'https://github.com/NoobCoderY/interview-ai-be',
       },
-      demo: '#',
+      demo: 'https://interview-ai-fe-ten.vercel.app/',
       highlights: [
         'AI-generated questions tailored to target role, experience level, and interview mode (Technical / HR)',
         'Resume parsing — upload PDF and AI generates questions based on actual projects and skills',
@@ -323,7 +323,7 @@ export default function Projects() {
                   className='min-w-[280px] max-w-[280px] snap-start'
                 >
                   <Card className='h-[320px] bg-gradient-to-br from-gray-900/90 to-gray-800/80 border-gray-800 hover:border-primary/40 transition-all duration-300 overflow-hidden group relative'>
-                   
+                    
 
                     <div className='relative h-32 overflow-hidden'>
                       <img
@@ -467,5 +467,3 @@ export default function Projects() {
         </Tabs>
       </div>
     </section>
-  );
-}
