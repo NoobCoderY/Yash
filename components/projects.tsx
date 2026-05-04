@@ -1,27 +1,425 @@
-const projects = [
-  {
-    title: 'InterviewIQ.AI',
-    description: 'An AI-powered mock interview platform that simulates real interview pressure, evaluates your answers, and gives actionable feedback to help you land your next job.',
-    highlights: [...], // keep existing highlights
-    github: '...', // keep existing links
-    demo: '...', // keep existing demo link
-    tags: [...],
-  },
-  {
-    title: 'MeetHive',
-    description: 'A full-stack AI meeting intelligence platform for transcribing meetings, generating summaries, and managing team workspaces.',
-    highlights: [...],
-    github: '...',
-    demo: 'https://meet-hive-fe.vercel.app',
-    tags: ['React.js', 'Redux', 'Vite', 'Django', 'AWS Transcribe', 'AWS Comprehend', 'PostgreSQL', 'Mistral AI', 'FFmpeg', 'AWS S3', 'Mailjet', 'i18n', 'LAMEjs', 'Dynamic Pricing', 'Live Tracking'],
-  },
-  {
-    title: 'Drivo',
-    description: 'A real-time ride-hailing application with live tracking, dynamic pricing, and geolocation — built like Uber.',
-    highlights: [...],
-    github: '...',
-    tags: [...],
-  },
-];
+'use client';
 
-export default projects;
+import { useState, useRef } from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import {
+  ExternalLink,
+  ChevronLeft,
+  ChevronRight,
+  Code,
+  Server,
+} from 'lucide-react';
+import Link from 'next/link';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
+
+export default function Projects() {
+  const ref = useRef(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const [activeTab, setActiveTab] = useState('all');
+
+  const projects = [
+    {
+      title: 'InterviewIQ.AI',
+      description:
+        'An AI-powered mock interview platform that simulates real interview pressure, evaluates your answers, and gives actionable feedback to help you land your next job.',
+      image:
+        'https://img.freepik.com/free-vector/job-interview-conversation_74855-7566.jpg',
+      tags: [
+        'React.js',
+        'Node.js',
+        'Express.js',
+        'LLM API',
+        'Voice API',
+        'Razorpay',
+        'PDF Parsing',
+        'Resume Parsing',
+        'Tailwind CSS',
+        'MongoDB',
+      ],
+      category: 'fullstack',
+      github: {
+        fe: 'https://github.com/NoobCoderY/interview-ai-fe',
+        be: 'https://github.com/NoobCoderY/interview-ai-be',
+      },
+      demo: 'https://interview-ai-fe-ten.vercel.app/',
+      highlights: [
+        'AI-generated questions tailored to target role, experience level, and interview mode (Technical / HR) using LLM APIs with contextual prompt engineering',
+        'Resume PDF parsing — upload your resume and the AI auto-extracts your projects and skills to generate personalized questions',
+        'Voice-based answers — speak your responses naturally during the interview session',
+        'Real-time AI scoring — every answer evaluated on communication, technical correctness, and confidence',
+        'Downloadable PDF performance report after each session with full breakdown',
+        'Interview history — track progress and scores across all past sessions',
+        'Credits system — start free with 100 credits, buy more via Razorpay when needed',
+      ],
+    },
+    {
+      title: 'MeetHive',
+      description:
+        'A full-stack AI meeting intelligence platform for transcribing meetings, generating summaries, and managing team workspaces.',
+      image:
+        'https://clickup.com/blog/wp-content/uploads/2023/04/Otter.ia-.png',
+      tags: [
+        'React.js',
+        'Redux',
+        'Vite',
+        'Django',
+        'AWS Transcribe',
+        'AWS Comprehend',
+        'PostgreSQL',
+        'Mistral AI',
+        'FFmpeg',
+        'AWS S3',
+        'Mailjet',
+        'i18n',
+        'LAMEjs',
+      ],
+      category: 'fullstack',
+      github: {
+        fe: 'https://github.com/NoobCoderY/MeetHive_fe',
+        be: 'https://github.com/NoobCoderY/MeetHive_be',
+      },
+      demo: 'https://meet-hive-fe.vercel.app',
+      highlights: [
+        'Live transcription via AWS Transcribe with real-time speech visualizers and support for microphone input and audio file uploads',
+        'Automatic AI meeting summaries powered by Mistral AI and AWS Comprehend with key insight extraction',
+        'PDF export of meeting summaries and full meeting details',
+        'Scalable company, department, and project management workflows',
+        'Audio processing pipeline with FFmpeg and LAMEjs for MP3 encoding and voice visualization',
+        'Multi-language support (i18n with react-intl), dark/light theme, responsive mobile-first design',
+        'Full user auth — signup, login, password reset, email verification, avatar profiles',
+        'Global search and feedback system',
+      ],
+    },
+    {
+      title: 'Drivo',
+      description:
+        'A real-time ride-hailing application with live tracking, dynamic pricing, and geolocation — built like Uber.',
+      image:
+        'https://img.freepik.com/premium-photo/booking-ride-abstract-concept-vector-illustration_826551-1448.jpg',
+      tags: [
+        'React.js',
+        'Redux',
+        'Vite',
+        'Node.js',
+        'Express.js',
+        'WebSocket',
+        'MongoDB',
+        'Google Maps API',
+        'Tailwind CSS',
+      ],
+      category: 'fullstack',
+      github: {
+        fe: 'https://github.com/NoobCoderY/Drivo_fe',
+        be: 'https://github.com/NoobCoderY/Drivo_BE',
+      },
+      demo: 'https://drivo-fe.vercel.app/',
+      highlights: [
+        'Real-time geolocation and live ride tracking with bidirectional driver-user communication via WebSocket',
+        'Dynamic pricing engine based on distance and demand',
+        'Google Maps API integration for route calculation, ETA estimation, and map rendering',
+        'Scalable backend for user and driver lifecycle management — ride requests, acceptance, completion',
+        'Responsive UI with real-time state updates via Redux',
+      ],
+    },
+    {
+      title: 'Twaddle',
+      description:
+        'A Twitter-inspired social media platform for posting multimedia content, following users, and viewing personalized feeds.',
+      image:
+        'https://th.bing.com/th/id/OIP.sjPD-vHA8wMdgEDMw8rBcwHaFj?rs=1&pid=ImgDetMain',
+      tags: [
+        'TypeScript',
+        'Next.js',
+        'React Query',
+        'Node.js',
+        'GraphQL',
+        'Prisma ORM',
+        'PostgreSQL',
+        'Supabase',
+        'AWS S3',
+        'JWT',
+        'Google OAuth',
+        'Codegen',
+      ],
+      category: 'fullstack',
+      github: {
+        fe: 'https://github.com/NoobCoderY/Twitter_Client',
+        be: 'https://github.com/NoobCoderY/Twitter_Server',
+      },
+      demo: 'https://twitter-client-lyart.vercel.app/',
+    },
+    {
+      title: 'Burger Wala',
+      description:
+        'A food ordering platform with features for both end-users and admins, including online payment integration with Razorpay.',
+      image: 'https://c8.alamy.com/comp/PX7H51/online-food-order-PX7H51.jpg',
+      tags: [
+        'React',
+        'Redux',
+        'Framer Motion',
+        'Express.js',
+        'Node.js',
+        'MongoDB',
+        'Passport.js',
+        'Razorpay',
+        'Chart.js',
+      ],
+      category: 'fullstack',
+      github: {
+        fe: 'https://github.com/NoobCoderY/Burger_Wala_Frontend',
+        be: 'https://github.com/NoobCoderY/Burger_Wala_Backend',
+      },
+      demo: 'https://github.com/NoobCoderY/Burger_Wala_Frontend',
+    },
+    {
+      title: 'Crypto Tracker',
+      description:
+        'A React-based cryptocurrency tracking application featuring live data charts, favorite coin management, and real-time price updates.',
+      image:
+        'https://th.bing.com/th/id/OIP.986_aTlrKcIdm0GKpF_I4AHaEK?w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2',
+      tags: [
+        'React.js',
+        'Redux',
+        'Chart.js',
+        'CoinGecko API',
+        'Axios',
+        'Tailwind CSS',
+        'React Query',
+        'LocalStorage',
+        'Vite',
+        'Framer Motion',
+      ],
+      category: 'frontend',
+      github: {
+        fe: 'https://github.com/NoobCoderY/Crypto_app',
+      },
+      demo: 'https://crypto-app-noobcodery.vercel.app/',
+    },
+    {
+      title: 'E-Commerce Admin Dashboard',
+      description:
+        'A comprehensive admin dashboard for managing e-commerce orders, products, and customer data with sales analytics.',
+      image:
+        'https://image.freepik.com/free-vector/modern-admin-panel-with-graphics_23-2148372588.jpg',
+      tags: [
+        'MongoDB',
+        'Express.js',
+        'React.js',
+        'Node.js',
+        'Redux',
+        'Chart.js',
+        'JWT Authentication',
+        'Mongoose',
+        'Tailwind CSS',
+        'Axios',
+        'React Table',
+      ],
+      category: 'fullstack',
+      github: {
+        fe: 'https://github.com/NoobCoderY/Admin_DashBoard',
+        be: 'https://github.com/NoobCoderY/Admin_DashBoard',
+      },
+      demo: 'https://github.com/NoobCoderY/Admin_DashBoard',
+    },
+  ];
+
+  const categories = [
+    'all',
+    ...new Set(projects.map((project) => project.category)),
+  ];
+
+  const filteredProjects =
+    activeTab === 'all'
+      ? projects
+      : projects.filter((project) => project.category === activeTab);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (carouselRef.current) {
+      const { current } = carouselRef;
+      const scrollAmount =
+        direction === 'left' ? -current.clientWidth : current.clientWidth;
+      current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.05 * i,
+        duration: 0.4,
+      },
+    }),
+  };
+
+  return (
+    <section id='projects' className='overflow-hidden'>
+      <div className='container mx-auto px-4'>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5 }}
+          ref={ref}
+          className='text-center mb-8'
+        >
+          <h2 className='text-3xl font-bold mb-3'>
+            My <span className='gradient-text'>Projects</span>
+          </h2>
+          <div className='w-24 h-1 bg-primary mx-auto mb-5 rounded-full'></div>
+          <p className='text-lg text-gray-400 max-w-2xl mx-auto'>
+            Here are some of the projects I've worked on, showcasing my skills
+            in full-stack development.
+          </p>
+        </motion.div>
+
+        <Tabs defaultValue='all' value={activeTab} onValueChange={setActiveTab} className=''>
+          <div className='flex justify-center mb-6'>
+            <TabsList>
+              {categories.map((category) => (
+                <TabsTrigger key={category} value={category} className='capitalize'>
+                  {category}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </div>
+
+          <TabsContent value={activeTab} className='mt-0 relative'>
+            <div className='absolute -left-4 top-1/2 -translate-y-1/2 z-10'>
+              <Button
+                variant='ghost'
+                size='icon'
+                className='rounded-full bg-gray-900/80 backdrop-blur-sm hover:bg-gray-800 shadow-lg'
+                onClick={() => scroll('left')}
+              >
+                <ChevronLeft className='h-5 w-5' />
+                <span className='sr-only'>Scroll left</span>
+              </Button>
+            </div>
+
+            <div
+              ref={carouselRef}
+              className='flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory hide-scrollbar'
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {filteredProjects.map((project, i) => (
+                <motion.div
+                  key={i}
+                  custom={i}
+                  variants={cardVariants}
+                  initial='hidden'
+                  animate={isInView ? 'visible' : 'hidden'}
+                  className='min-w-[280px] max-w-[280px] snap-start'
+                >
+                  <Card className='h-[320px] bg-gradient-to-br from-gray-900/90 to-gray-800/80 border-gray-800 hover:border-primary/40 transition-all duration-300 overflow-hidden group relative'>
+                    <div className='relative h-32 overflow-hidden'>
+                      <img
+                        src={project.image || '/placeholder.svg'}
+                        alt={project.title}
+                        className='w-full h-full object-cover transition-transform duration-700 group-hover:scale-110'
+                      />
+                      <div className='absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60'></div>
+                      <div className='absolute bottom-0 left-0 w-full p-3'>
+                        <h3 className='text-lg font-bold text-white drop-shadow-md'>
+                          {project.title}
+                        </h3>
+                      </div>
+                    </div>
+
+                    <CardContent className='p-4 flex flex-col h-[188px]'>
+                      <p className='text-gray-300 text-sm mb-3 line-clamp-2 h-10'>
+                        {project.description}
+                      </p>
+
+                      <div className='flex flex-wrap gap-1.5 h-[40px]'>
+                        {project.tags.slice(0, 5).map((tag, index) => (
+                          <Badge key={index} variant='secondary' className='text-xs px-1.5 py-0.5 bg-gray-800/80'>
+                            {tag}
+                          </Badge>
+                        ))}
+                        {project.tags.length > 5 && (
+                          <Popover>
+                            <PopoverTrigger asChild>
+                              <Button variant='outline' size='sm' className='h-5 text-xs px-1.5 py-0 cursor-pointer'>
+                                +{project.tags.length - 5}
+                              </Button>
+                            </PopoverTrigger>
+                            <PopoverContent className='w-auto p-2 bg-gray-900 border-gray-800' side='top' align='center' sideOffset={5}>
+                              <div className='flex flex-wrap gap-1.5 max-w-[250px]'>
+                                {project.tags.slice(5).map((tag, index) => (
+                                  <Badge key={index} variant='secondary' className='text-xs px-1.5 py-0.5 bg-gray-800/80'>
+                                    {tag}
+                                  </Badge>
+                                ))}
+                              </div>
+                            </PopoverContent>
+                          </Popover>
+                        )}
+                      </div>
+
+                      <div className='flex justify-between mt-auto'>
+                        <div className='flex gap-1'>
+                          {project.github.fe && project.github.fe !== '#' && (
+                            <Link href={project.github.fe} target='_blank' rel='noopener noreferrer'>
+                              <Button variant='ghost' size='sm' className='h-8 px-2' title='Frontend Code'>
+                                <Code className='h-3.5 w-3.5' />
+                                <span className='sr-only'>Frontend Code</span>
+                              </Button>
+                            </Link>
+                          )}
+                          {project.github.be && project.github.be !== '#' && (
+                            <Link href={project.github.be} target='_blank' rel='noopener noreferrer'>
+                              <Button variant='ghost' size='sm' className='h-8 px-2' title='Backend Code'>
+                                <Server className='h-3.5 w-3.5' />
+                                <span className='sr-only'>Backend Code</span>
+                              </Button>
+                            </Link>
+                          )}
+                        </div>
+                        {project.demo && project.demo !== '#' && (
+                          <Link href={project.demo} target='_blank' rel='noopener noreferrer'>
+                            <Button size='sm' className='h-8 px-2.5 bg-primary/90 hover:bg-primary'>
+                              <ExternalLink className='h-3.5 w-3.5 mr-1' />
+                              Demo
+                            </Button>
+                          </Link>
+                        )}
+                      </div>
+                    </CardContent>
+
+                    <div className='absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none'></div>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className='absolute -right-4 top-1/2 -translate-y-1/2 z-10'>
+              <Button
+                variant='ghost'
+                size='icon'
+                className='rounded-full bg-gray-900/80 backdrop-blur-sm hover:bg-gray-800 shadow-lg'
+                onClick={() => scroll('right')}
+              >
+                <ChevronRight className='h-5 w-5' />
+                <span className='sr-only'>Scroll right</span>
+              </Button>
+            </div>
+
+            <div className='flex justify-center mt-6'></div>
+          </TabsContent>
+        </Tabs>
+      </div>
+    </section>
+  );
+}
