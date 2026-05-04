@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Code2, Database, Globe, Server, Layers, PenTool } from 'lucide-react';
+import { Code2, Database, Globe, Server, Layers, PenTool, Brain } from 'lucide-react';
 
 export default function Skills() {
   const ref = useRef(null);
@@ -20,8 +20,8 @@ export default function Skills() {
         'TypeScript',
         'Python',
         'SQL',
-        'Data Structures',
-        'Algorithms',
+        'HTML',
+        'CSS',
       ],
     },
     {
@@ -32,24 +32,63 @@ export default function Skills() {
         'Next.js',
         'Redux',
         'Tailwind CSS',
+        'React Query',
+        'Vite',
         'SASS',
-        'Angular',
       ],
     },
     {
       title: 'Backend',
       icon: <Server className='h-8 w-8 text-primary' />,
-      skills: ['Node.js', 'Express.js', 'Django', 'GraphQL'],
+      skills: [
+        'Node.js',
+        'Express.js',
+        'Django',
+        'REST APIs',
+        'GraphQL',
+        'WebSocket',
+        'Microservices',
+      ],
     },
     {
       title: 'Databases',
       icon: <Database className='h-8 w-8 text-primary' />,
-      skills: ['MongoDB', 'PostgreSQL', 'Supabase'],
+      skills: [
+        'MongoDB',
+        'PostgreSQL',
+        'MySQL',
+        'Redis',
+        'Prisma ORM',
+        'Supabase',
+      ],
     },
     {
       title: 'Cloud & DevOps',
       icon: <Layers className='h-8 w-8 text-primary' />,
-      skills: ['AWS', 'S3', 'AWS Transcribe', 'Docker', ' GitHub CI/CD'],
+      skills: [
+        'AWS S3',
+        'AWS Transcribe',
+        'AWS Comprehend',
+        'Docker',
+        'Nginx',
+        'CI/CD',
+      ],
+    },
+    {
+      title: 'AI & LLM',
+      icon: <Brain className='h-8 w-8 text-primary' />,
+      skills: [
+        'RAG',
+        'LangChain',
+        'MCP',
+        'Prompt Engineering',
+        'LLM API Integration',
+        'OpenAI',
+        'Mistral AI',
+        'AI Agents',
+        'Vector Databases',
+        'PDF Parsing',
+      ],
     },
     {
       title: 'Tools & Others',
